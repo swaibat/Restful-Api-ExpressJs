@@ -47,7 +47,11 @@ router.patch('/:id',(req, res) => {
   }
 );
 
+
 // Get all repaid loans.
+// Endpoint: GET /loans?status=approved&repaid=false
+// Get all current loans that are not fully repaid.
+
 router.get('/me', (req, res, next) => {
   const result = loans.filter(a => a.data.status === req.query.status );
   
